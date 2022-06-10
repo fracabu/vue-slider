@@ -35,8 +35,11 @@ const appVue = new Vue({
   // Conterrà tutti i dati necessari all'applicazione
     data: {
 	  // varie chiavi necessarie all'app
-    imgSrc:"img/01.jpg" + "img/02.jpg" + "img/03.jpg" + "img/04.jpg" + "img/05.jpg",
-    
+        imgSrc:"img/01.jpg",
+        arrayObj: slides,
+        oggettoCorrente: slides[0],
+        imgCorrente: slides[0].image,
+        index: 0
     },
 	
 	// Conterrà una serie di funzioni
@@ -44,8 +47,12 @@ const appVue = new Vue({
 		// funzioni che useremo nell'app
 
         changeImage(){
-            const turnImg = Math.floor(Math.random() *100);
-            this.imgSrc = `img/${turnImg}`;
+            
+            this.index++
+            this.imgCorrente = this.arrayObj[this.index].image
+
+        
+            
         },
 	}
 });
