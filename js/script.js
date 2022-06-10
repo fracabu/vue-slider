@@ -35,10 +35,18 @@ const appVue = new Vue({
   // Conterrà tutti i dati necessari all'applicazione
     data: {
 	  // varie chiavi necessarie all'app
+    imgSrc:"img/01.jpg" + "img/02.jpg" + "img/03.jpg" + "img/04.jpg" + "img/05.jpg",
+    
     },
 	
 	// Conterrà una serie di funzioni
 	methods: {
 		// funzioni che useremo nell'app
+
+        changeImage(){
+            const turnImg = Math.floor(Math.random() *100);
+            this.imgSrc = `img/${turnImg}`;
+        },
 	}
 });
+
